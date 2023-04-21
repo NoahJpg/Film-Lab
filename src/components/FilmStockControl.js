@@ -119,6 +119,7 @@ class FilmStockControl extends React.Component {
     this.setState({
       filmList: newFilmList,
     });
+    this.forceUpdate();
   }
 
   render() {
@@ -134,7 +135,7 @@ class FilmStockControl extends React.Component {
                 handleChangingSelectedFilm={this.handleChangingSelectedFilm}
                 />
                 <button className={this.state.newFilmFormShowing || "green"} 
-                        onClick={this.handleClickAddNewFilm}>Add new Film
+                  onClick={this.handleClickAddNewFilm}>Add new Film
                 </button>
 
               <Modal 
@@ -144,7 +145,6 @@ class FilmStockControl extends React.Component {
                   type='create' 
                   onClickAddFilm={this.handleAddingNewFilm} 
                   onCancelAddFilm={this.handleCancelAddingNewFilm} 
-                  handleEditingFilm={this.handleEditingFilm} 
                   />}
               />
 

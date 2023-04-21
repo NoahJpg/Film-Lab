@@ -30,6 +30,7 @@ function NewFilmForm(props) {
     });
     props.returnToList();
   }
+  
 
   return (
     <form onSubmit = {props.type === 'create' ? handleNewFilmFormSubmission : handleEditFilmFormSubmission}>
