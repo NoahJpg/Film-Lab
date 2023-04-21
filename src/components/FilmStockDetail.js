@@ -31,7 +31,7 @@ class FilmStockDetail extends React.Component {
 
         <Modal 
           showing={this.state.editModalShowing} 
-          headerText="Edit modal" 
+          headerText="Edit Film Details" 
           bodyComponent={<NewFilmForm 
             editingFilm={this.props.film} type='edit' 
             onClickAddFilm={this.props.onClickEdit} 
@@ -43,11 +43,10 @@ class FilmStockDetail extends React.Component {
           <div>Size: {this.props.film.size}</div>
           <div>Price: ${this.props.film.price}</div>
           <div>Quantity: {this.props.film.quantity}</div>
-          <div>{this.props.film.id}</div>
         </div>
         <div className='details-button-area'>
           <button onClick={this.props.onClickBackToList}>Back To list</button>
-          
+
           <button onClick={() => this.showEditModal()} className='yellow'>Edit</button>
 
           <button onClick={() => this.props.onClickDelete(this.props.film.id)}
