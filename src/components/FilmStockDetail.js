@@ -9,7 +9,7 @@ class FilmStockDetail extends React.Component {
     super(props);
     this.state = {
       editModalShowing: false,
-      deleteConfrimModalShowing: false,
+      deleteConfirmModalShowing: false,
     }
   }
 
@@ -21,7 +21,7 @@ class FilmStockDetail extends React.Component {
 
   hideEditModal() {
     this.setState(() => ({
-      editModalShowing: true,
+      editModalShowing: false,
     }));
   }
 
@@ -32,13 +32,17 @@ class FilmStockDetail extends React.Component {
         <Modal 
           showing={this.state.editModalShowing} 
           headerText="Edit modal" 
-          bodyComponent={<NewFilmForm editingFilm={this.props.film} type='edit' onClickAddFilm={this.props.onClickEdit} onCancelAddFilm={() => this.hideEditModal()} />}
+          bodyComponent={<NewFilmForm 
+            editingFilm={this.props.film} type='edit' 
+            onClickAddFilm={this.props.onClickEdit} 
+            onCancelAddFilm={() => this.hideEditModal()} />}
         />
 
         <div className='film-attribute-list'>
           <h1>{this.props.film.name}</h1>
           <div>Manufacturer: {this.props.film.manufacturer}</div>
-          <div>{this.props.film.description}</div>
+          <div>ISO: {this.props.film.iso}</div>
+          <div>Size: {this.props.film.size}</div>
           <div>Price: ${this.props.film.price}</div>
           <div>Quantity: {this.props.film.quantity}</div>
           <div>{this.props.film.id}</div>
@@ -55,6 +59,15 @@ class FilmStockDetail extends React.Component {
       </div>
     );
   }
+}
+
+FilmStockDetail.propTypes = {
+  film: PropTypes.object,
+  onClickBackToList: PropTypes.func,
+  onClickBuy: PropTypes.func,
+  onClickRestock: PropTypes.func,
+  onClickDelete: PropTypes.func,
+  onClickEdit: PropTypes.func,
 }
 
 export default FilmStockDetail;

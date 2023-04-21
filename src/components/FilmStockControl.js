@@ -4,13 +4,43 @@ import FilmStockList from './FilmStockList';
 import { v4 } from 'uuid';
 import NewFilmForm from './NewFilmForm';
 import FilmStockDetail from './FilmStockDetail';
+import Modal from './Modal';
 
 class FilmStockControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      NewFilmFormShowing: false,
-      filmList: [],
+      newFilmFormShowing: false,
+      filmList: [
+        {
+          name: "Portra",
+          manufacturer: "Kodak",
+          iso: "800",
+          size: "35mm",
+          price: "13",
+          quantity: "100",
+          id: v4(),
+        },
+        {
+          name: "Portra",
+          manufacturer: "Kodak",
+          iso: "400",
+          size: "120",
+          price: "10",
+          quantity: "100",
+          id: v4(),
+        },
+        {
+          name: "HP5",
+          manufacturer: "Ilford",
+          iso: "400",
+          size: "35mm",
+          price: "9",
+          quantity: "200",
+          id: v4(),
+        },
+
+      ],
       selectedFilm: null,
     };
   }
@@ -55,13 +85,13 @@ class FilmStockControl extends React.Component {
 
   handleClickAddNewFilm = () => {
     this.setState(() => ({
-      NewFilmFormShowing: true,
+      newFilmFormShowing: true,
     }));
   };
 
   handleCancelAddingNewFilm = () => {
     this.setState(() => ({
-      NewFilmFormShowing: false,
+      newFilmFormShowing: false,
     }));
   };
 
@@ -75,7 +105,7 @@ class FilmStockControl extends React.Component {
     newFilmList.push(newFilm);
     this.setState({
       filmList: newFilmList,
-      NewFilmFormShowing: false,
+      newFilmFormShowing: false,
     });
   };
 
@@ -97,7 +127,7 @@ class FilmStockControl extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <main className={this.state.NewFilmFormShowing ? 'veiled' : ''}>
+        <main className={this.state.newFilmFormShowing ? 'veiled' : ''}>
           {
             this.state.selectedFilm === null ?
             <React.Fragment>
@@ -105,9 +135,16 @@ class FilmStockControl extends React.Component {
                 filmList={this.state.filmList}
                 handleChangingSelectedFilm={this.handleChangingSelectedFilm}
                 />
-                <button className={this.state.NewFilmFormShowing || "green"} 
+                <button className={this.state.newFilmFormShowing || "green"} 
                         onClick={this.handleClickAddNewFilm}>Add new Film
                 </button>
+
+                <Modal 
+                showing={this.state.newFilmFormShowing}
+                headerText={'Add new film'}
+                bodyComponent={<NewFilmForm type='create' onClickAddFilm={this.handleAddingNewFilm} onCancelAddFilm={this.handleCancelAddingNewFilm} />}
+              />
+
             </React.Fragment>
             :
             <FilmStockDetail

@@ -4,8 +4,8 @@ function FilmStockEntry(props) {
 
   return (
     <div className='film-stock-entry'>
+      <div>{props.film.name}</div>
       <div>Manufacturer: {props.film.manufacturer}</div>
-      <div>Name: {props.film.name}</div>
       <div>ISO: {props.film.iso}</div>
       <div>Size: {props.film.size}</div>
       <div>Price: ${props.film.price}</div>
@@ -24,3 +24,4 @@ FilmStockEntry.propTypes = {
 };
 
 export default FilmStockEntry;
+
