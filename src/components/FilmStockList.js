@@ -7,11 +7,11 @@ function FilmStockList(props) {
     <React.Fragment>
       <h2>Film Stocks:</h2>
       <div className="film-stock-list">
-        {props.FilmStockList.map(item => (
+        {props.FilmStockList.map(film => (
           <FilmStockEntry
             onClickViewDetails={props.handleChangingSelectedItem}
-            key={item.id}
-            item={item}
+            key={film.id}
+            film={film}
             />
         ))}
       </div>
