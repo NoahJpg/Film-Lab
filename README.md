@@ -15,7 +15,9 @@
 
 #### By Noah Atkinson
 
-<img src="src/img/film-fridge.jpg" alt="alt text" width="400"/>
+<div style="text-align:center">
+    <img src="src/img/film-fridge.jpg" alt="alt text" width="400"/>
+</div>
 
 ## Description
 #### _A web application that tracks inventory of film stock at a film lab._
