@@ -13,8 +13,8 @@ class FilmStockControl extends React.Component {
       newFilmFormShowing: false,
       filmList: [
         {
-          name: "Portra",
           manufacturer: "Kodak",
+          name: "Portra",
           iso: "800",
           size: "35mm",
           price: "13",
@@ -22,8 +22,8 @@ class FilmStockControl extends React.Component {
           id: v4(),
         },
         {
-          name: "Portra",
           manufacturer: "Kodak",
+          name: "Portra",
           iso: "400",
           size: "120",
           price: "10",
@@ -31,8 +31,8 @@ class FilmStockControl extends React.Component {
           id: v4(),
         },
         {
-          name: "HP5",
           manufacturer: "Ilford",
+          name: "HP5",
           iso: "400",
           size: "35mm",
           price: "9",
