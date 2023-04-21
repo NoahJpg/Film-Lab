@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header>
-      <h1>Film Lab's Inventory</h1>
+      <h1>The Film Fridge</h1>
     </header>
   );
 }

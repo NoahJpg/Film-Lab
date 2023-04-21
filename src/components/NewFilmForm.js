@@ -34,27 +34,27 @@ function NewFilmForm(props) {
     <form onSubmit = {props.type === 'create' ? handleNewFilmFormSubmission : handleEditFilmFormSubmission}>
       <div className="form-row">
         <label for="name">Film name</label>
-        <input placeholder={props.editingFilm && props.editingFilm.name} name="name" type="text" />
+        <input value={props.editingFilm && props.editingFilm.name} name="name" type="text" />
       </div>
       <div className="form-row">
         <label for="manufacturer">Manufacturer</label>
-        <input placeholder={props.editingFilm && props.editingFilm.manufacturer} name="manufacturer" type="text" />
+        <input value={props.editingFilm && props.editingFilm.manufacturer} name="manufacturer" type="text" />
       </div>
       <div className="form-row">
         <label for="iso">ISO</label>
-        <textarea placeholder={props.editingFilm && props.editingFilm.iso} name="iso" type="text" />
+        <textarea value={props.editingFilm && props.editingFilm.iso} name="iso" type="text" />
       </div>
       <div className="form-row">
         <label for="size">Size</label>
-        <textarea placeholder={props.editingFilm && props.editingFilm.size} name="size" type="text" />
+        <textarea value={props.editingFilm && props.editingFilm.size} name="size" type="text" />
       </div>
       <div className="form-row">
         <label for="price">Price</label>
-        <input placeholder={props.editingFilm && props.editingFilm.price} name="price" type="number" />
+        <input value={props.editingFilm && props.editingFilm.price} name="price" type="number" />
       </div>
       <div className="form-row">
         <label for="quantity">Quantity</label>
-        <input placeholder={props.editingFilm && props.editingFilm.quantity} name="quantity" type="number" />
+        <input value={props.editingFilm && props.editingFilm.quantity} name="quantity" type="number" />
       </div>
       <div className="form-row buttons">
         <button className='green'>Save</button>
