@@ -6,7 +6,7 @@ function NewFilmForm(props) {
 
   function handleNewFilmFormSubmission(e) {
     e.preventDefault();
-    props.onClickAddItem({
+    props.onClickAddFilm({
       manufacturer: e.target.manufacturer.value,
       name: e.target.name.value,
       size: e.target.size.value,
@@ -18,13 +18,13 @@ function NewFilmForm(props) {
 
   function handleEditFilmFormSubmission(e) {
     e.preventDefault();
-    props.onClickAddItem({
+    props.onClickAddFilm({
       manufacturer: e.target.manufacturer.value || e.target.manufacturer.placeholder,
       name: e.target.name.value || e.target.name.placeholder,
       size: e.target.size.value || e.target.size.placeholder,
       price: e.target.price.value || e.target.price.placeholder,
       quantity: e.target.quantity.value || e.target.quantity.placeholder,
-      id: props.editingItem.id,
+      id: props.editingFilm.id,
     })
   }
 
@@ -32,37 +32,37 @@ function NewFilmForm(props) {
     <form onSubmit = {props.type === 'create' ? handleNewFilmFormSubmission : handleEditFilmFormSubmission}>
       <div className="form-row">
         <label for="manufacturer">Manufacturer</label>
-        <input placeholder={props.editingItem && props.editingItem.manufacturer} name="manufacturer" type="text" />
+        <input placeholder={props.editingFilm && props.editingFilm.manufacturer} name="manufacturer" type="text" />
       </div>
       <div className="form-row">
-        <label for="name">Item name</label>
-        <input placeholder={props.editingItem && props.editingItem.name} name="name" type="text" />
+        <label for="name">Film name</label>
+        <input placeholder={props.editingFilm && props.editingFilm.name} name="name" type="text" />
       </div>
       <div className="form-row">
         <label for="size">Size</label>
-        <textarea placeholder={props.editingItem && props.editingItem.size} name="size" type="text" />
+        <textarea placeholder={props.editingFilm && props.editingFilm.size} name="size" type="text" />
       </div>
       <div className="form-row">
         <label for="price">Price</label>
-        <input placeholder={props.editingItem && props.editingItem.price} name="price" type="number" />
+        <input placeholder={props.editingFilm && props.editingFilm.price} name="price" type="number" />
       </div>
       <div className="form-row">
         <label for="quantity">Quantity</label>
-        <input placeholder={props.editingItem && props.editingItem.quantity} name="quantity" type="number" />
+        <input placeholder={props.editingFilm && props.editingFilm.quantity} name="quantity" type="number" />
       </div>
       <div className="form-row buttons">
         <button className='green'>Save</button>
-        <button onClick={props.onCancelAddItem} type='button'>Cancel</button>
+        <button onClick={props.onCancelAddFilm} type='button'>Cancel</button>
       </div>
     </form>
   );
 }
 
 NewFilmForm.propType = {
-  onClickAddItem: PropTypes.func,
-  onCancelAddItem: PropTypes.func,
+  onClickAddFilm: PropTypes.func,
+  onCancelAddFilm: PropTypes.func,
   type: PropTypes.string,
-  editingItem: PropTypes.object,
+  editingFilm: PropTypes.object,
 }
 
 export default NewFilmForm;

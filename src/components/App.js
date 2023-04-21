@@ -1,4 +1,5 @@
-import './App.css';
+import React from 'react';
+import FilmStockControl from './FilmStockControl';
 
 function App() {
   return (
@@ -8,5 +9,4 @@ function App() {
     
   );
 }
-
 export default App;

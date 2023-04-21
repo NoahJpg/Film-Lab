@@ -106,7 +106,7 @@ class FilmStockControl extends React.Component {
                 handleChangingSelectedFilm={this.handleChangingSelectedFilm}
                 />
                 <button className={this.state.NewFilmFormShowing || "green"} 
-                        onClick={this.handleClickAddNewFilm}>Add new Item
+                        onClick={this.handleClickAddNewFilm}>Add new Film
                 </button>
             </React.Fragment>
             :

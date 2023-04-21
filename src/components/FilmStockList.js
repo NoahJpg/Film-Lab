@@ -7,9 +7,9 @@ function FilmStockList(props) {
     <React.Fragment>
       <h2>Film Stocks:</h2>
       <div className="film-stock-list">
-        {props.FilmStockList.map(film => (
+        {props.filmStockList.map(film => (
           <FilmStockEntry
-            onClickViewDetails={props.handleChangingSelectedItem}
+            onClickViewDetails={props.handleChangingSelectedFilm}
             key={film.id}
             film={film}
             />
@@ -21,7 +21,7 @@ function FilmStockList(props) {
 
 FilmStockList.propTypes = {
   filmStockList: PropTypes.array,
-  handleChangingSelectedItem: PropTypes.func,
+  handleChangingSelectedFilm: PropTypes.func,
 }
 
 export default FilmStockList;
