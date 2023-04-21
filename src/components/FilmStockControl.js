@@ -18,7 +18,7 @@ class FilmStockControl extends React.Component {
           iso: "800",
           size: "35mm",
           price: "13",
-          quantity: "100",
+          quantity: 100,
           id: v4(),
         },
         {
@@ -27,7 +27,7 @@ class FilmStockControl extends React.Component {
           iso: "400",
           size: "120",
           price: "10",
-          quantity: "100",
+          quantity: 100,
           id: v4(),
         },
         {
@@ -36,7 +36,7 @@ class FilmStockControl extends React.Component {
           iso: "400",
           size: "35mm",
           price: "9",
-          quantity: "200",
+          quantity: 200,
           id: v4(),
         },
 
