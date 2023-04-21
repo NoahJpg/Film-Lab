@@ -27,7 +27,8 @@ function NewFilmForm(props) {
       price: e.target.price.value || e.target.price.placeholder,
       quantity: e.target.quantity.value || e.target.quantity.placeholder,
       id: props.editingFilm.id,
-    })
+    });
+    props.returnToList();
   }
 
   return (

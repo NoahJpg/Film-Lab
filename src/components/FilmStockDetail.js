@@ -30,12 +30,30 @@ class FilmStockDetail extends React.Component {
       <div className='film-details-card'>
 
         <Modal 
+          type='edit' 
           showing={this.state.editModalShowing} 
-          headerText="Edit Film Details" 
-          bodyComponent={<NewFilmForm 
-            editingFilm={this.props.film} type='edit' 
-            onClickAddFilm={this.props.onClickEdit} 
-            onCancelAddFilm={() => this.hideEditModal()} />}
+          headerText={`Editing ${this.props.film.name}`}
+          bodyComponent={
+            <NewFilmForm 
+              type="edit"
+              editingFilm={this.props.film} 
+              onClickAddFilm={this.props.onClickEdit} 
+              onCancelAddFilm={() => this.hideEditModal()} 
+              returnToList={this.props.returnToList}
+            />
+          }
+        />
+        <Modal
+          type='delete'
+          showing={this.state.deleteConfirmModalShowing} 
+          headerText={`Delete ${this.props.film.name}?`}
+          bodyComponent={
+            <div className='button-area'>
+              <button onClick={() => this.props.onClickDelete(this.props.film.id)} className='red'>DELETE
+              </button>
+              <button onClick={() => this.hideDeleteModal()}>Cancel</button>
+            </div>
+          }
         />
 
         <div className='film-attribute-list'>
@@ -45,9 +63,11 @@ class FilmStockDetail extends React.Component {
           <div>Quantity: {this.props.film.quantity}</div>
         </div>
         <div className='details-button-area'>
+
           <button onClick={this.props.onClickBackToList}>Back To list</button>
 
-          <button onClick={() => this.showEditModal()} className='yellow'>Edit</button>
+          <button onClick={() => this.showEditModal()} className='yellow'>Edit
+          </button>
 
           <button onClick={() => this.props.onClickDelete(this.props.film.id)}
           className='red'>Delete
@@ -74,6 +94,7 @@ FilmStockDetail.propTypes = {
   onClickRestock: PropTypes.func,
   onClickDelete: PropTypes.func,
   onClickEdit: PropTypes.func,
+  returnToList: PropTypes.func,
 }
 
 export default FilmStockDetail;
