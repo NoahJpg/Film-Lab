@@ -28,7 +28,6 @@ function NewFilmForm(props) {
       quantity: e.target.quantity.value || e.target.quantity.placeholder,
       id: props.editingFilm.id,
     })
-    props.returnToList();
   }
 
   return (
@@ -76,7 +75,7 @@ function NewFilmForm(props) {
         />
       </div>
       <div className="form-row buttons">
-        <button className='green'>Save</button>
+        <button type="submit" className='green' >Save</button>
         <button onClick={props.onCancelAddFilm} 
         type='button'>Cancel</button>
       </div>

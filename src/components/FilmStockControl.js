@@ -120,8 +120,6 @@ class FilmStockControl extends React.Component {
       filmList: newFilmList,
     });
   }
-  
-
 
   render() {
     return ( 

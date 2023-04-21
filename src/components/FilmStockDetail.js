@@ -47,7 +47,9 @@ class FilmStockDetail extends React.Component {
         </div>
         <div className='details-button-area'>
           <button onClick={this.props.onClickBackToList}>Back To list</button>
+          
           <button onClick={() => this.showEditModal()} className='yellow'>Edit</button>
+
           <button onClick={() => this.props.onClickDelete(this.props.film.id)}
           className='red'>Delete
           </button>
@@ -57,7 +59,7 @@ class FilmStockDetail extends React.Component {
           className='green'>Buy
           </button>
 
-          <button onClick={() => this.props.onClickRestock(this.props.item.id)}
+          <button onClick={() => this.props.onClickRestock(this.props.film.id)}
           className='orange'>Restock
           </button>
         </div>
