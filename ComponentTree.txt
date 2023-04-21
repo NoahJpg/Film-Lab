@@ -1,0 +1,11 @@
+<App>
+  <Header />
+  <FilmStockList>
+    <FilmStock1 />
+    <FilmStock2 />
+    ...
+  </FilmStockList>
+  <AddFilmStockForm />
+  <EditFilmStockForm />
+  <SellFilmStockForm />
+</App>

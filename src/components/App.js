@@ -3,7 +3,7 @@ import './App.css';
 function App() {
   return (
     <React.Fragment>
-      <h1>APP</h1>
+      <FilmStockControl />
     </React.Fragment>
     
   );

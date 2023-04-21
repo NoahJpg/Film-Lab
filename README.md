@@ -10,7 +10,6 @@
     <a href="#setup-and-installation-requirements">Setup and Installation Requirements</a> •
     <a href="#known-bugs">Known Bugs</a> •
     <a href="#license">License</a>
-    
   </p>
 
 
