@@ -45,8 +45,8 @@ class FilmStockControl extends React.Component {
     };
   }
 
-  getFilmByID = (id, list = this.state.filmList) => {
-    return list.filter(film => film.id === id) [0]
+  getFilmById = (id, list = this.state.filmList) => {
+    return list.filter(film => film.id === id)[0]
   }
 
   handleClickBackToList = () => {
@@ -57,7 +57,7 @@ class FilmStockControl extends React.Component {
 
   handleBuyFilm = (id) => {
     const newFilmList = [...this.state.filmList];
-    const depletedFilm = this.getFilmByID(id, newFilmList);
+    const depletedFilm = this.getFilmById(id, newFilmList);
     depletedFilm.quantity = parseInt(depletedFilm.quantity -1);
     this.setState({
       filmList: newFilmList,
@@ -96,7 +96,7 @@ class FilmStockControl extends React.Component {
   };
 
   handleChangingSelectedFilm = (id) => {
-    const newSelectedFilm = this.getFilmByID(id);
+    const newSelectedFilm = this.getFilmById(id);
     this.setState({ selectedFilm: newSelectedFilm });
   };
 
@@ -109,22 +109,24 @@ class FilmStockControl extends React.Component {
     });
   };
 
-  handleEditingFilm = (newFilm) => {
-    const newFilmList = [...this.state.filmList];
-    
-    const deletedFilm = this.getFilmByID(newFilm.id, newFilmList)
-    newFilmList.splice(newFilmList.indexOf(deletedFilm), 1);
-
-    newFilmList.push(newFilm);
-
-    this.setState({
-      filmList: newFilmList,
-    });
+  handleEditingFilm = (newFilm, callback) => {
+    this.setState(prevState => {
+      const newFilmList = prevState.filmList.map(film => {
+        if (film.id === newFilm.id) {
+          return newFilm;
+        } else {
+          return film;
+        }
+      });
+  
+      return { filmList: newFilmList };
+    }, callback);
   }
+  
 
 
   render() {
-    return (
+    return ( 
       <React.Fragment>
         <Header />
         <main className={this.state.newFilmFormShowing ? 'veiled' : ''}>
@@ -139,10 +141,15 @@ class FilmStockControl extends React.Component {
                         onClick={this.handleClickAddNewFilm}>Add new Film
                 </button>
 
-                <Modal 
+              <Modal 
                 showing={this.state.newFilmFormShowing}
                 headerText={'Add new film'}
-                bodyComponent={<NewFilmForm type='create' onClickAddFilm={this.handleAddingNewFilm} onCancelAddFilm={this.handleCancelAddingNewFilm} />}
+                bodyComponent={<NewFilmForm 
+                  type='create' 
+                  onClickAddFilm={this.handleAddingNewFilm} 
+                  onCancelAddFilm={this.handleCancelAddingNewFilm} 
+                  handleEditingFilm={this.handleEditingFilm} 
+                  />}
               />
 
             </React.Fragment>

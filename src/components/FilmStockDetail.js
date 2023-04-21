@@ -39,9 +39,7 @@ class FilmStockDetail extends React.Component {
         />
 
         <div className='film-attribute-list'>
-          <h1>{this.props.film.name}</h1>
-          <div>Manufacturer: {this.props.film.manufacturer}</div>
-          <div>ISO: {this.props.film.iso}</div>
+          <h1>{this.props.film.manufacturer} {this.props.film.name} {this.props.film.iso}</h1>
           <div>Size: {this.props.film.size}</div>
           <div>Price: ${this.props.film.price}</div>
           <div>Quantity: {this.props.film.quantity}</div>
