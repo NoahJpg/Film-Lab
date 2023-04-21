@@ -1,4 +1,4 @@
-<h1 align="center">Film Lab</h1>
+<h1 align="center">The Film Fridge</h1>
   <p align="center">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" />
     <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg" />
@@ -15,6 +15,7 @@
 
 #### By Noah Atkinson
 
+<img src="src/img/film-fridge.jpg" alt="alt text" width="400"/>
 
 ## Description
 #### _A web application that tracks inventory of film stock at a film lab._
