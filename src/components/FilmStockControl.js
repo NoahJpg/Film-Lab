@@ -109,18 +109,16 @@ class FilmStockControl extends React.Component {
     });
   };
 
-  handleEditingFilm = (newFilm, callback) => {
-    this.setState(prevState => {
-      const newFilmList = prevState.filmList.map(film => {
-        if (film.id === newFilm.id) {
-          return newFilm;
-        } else {
-          return film;
-        }
-      });
-  
-      return { filmList: newFilmList };
-    }, callback);
+  handleEditingFilm = (newFilm) => {
+    const newFilmList = [...this.state.filmList];
+    const toDeleteFilm = this.getFilmById(newFilm.id, newFilmList);
+    newFilmList.splice(newFilmList.indexOf(toDeleteFilm), 1);
+
+    newFilmList.push(newFilm);
+
+    this.setState({
+      filmList: newFilmList,
+    });
   }
   
 
@@ -161,6 +159,7 @@ class FilmStockControl extends React.Component {
               onClickRestock={this.handleRestockFilm}
               onClickDelete={this.handleDeleteFilm}
               onClickEdit={this.handleEditingFilm}
+              returnToLIst={this.handleClickBackToList}
             />
           }
         </main>
