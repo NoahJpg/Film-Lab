@@ -1,19 +1,24 @@
-<h1 align="center">The Film Fridge</h1>
+<h1 align="center">🎞️ The Film Fridge 🎞️</h1>
+<h3 align="center">
+  🎨 By: Noah Atkinson 
+</h3>
+
   <p align="center">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" />
     <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg" />
   </p>
   
   <p align="center">
-    <a href="#description">Description</a> •
-    <a href="#technologies-used">Technologies Used</a> •
-    <a href="#setup-and-installation-requirements">Setup and Installation Requirements</a> •
-    <a href="#known-bugs">Known Bugs</a> •
-    <a href="#license">License</a>
+    <a href="#description">📝 Description 📚</a>
+    <br>
+    <a href="#technologies-used">💽 Technologies Used 💾</a>
+    <br>
+    <a href="#setup-and-installation-requirements">🧰 Setup and Installation Requirements 🔨</a>
+    <br>
+    <a href="#known-bugs">🪲🐞 Known Bugs 🐛🐜</a>
+    <br>
+    <a href="#license">🪪 License 🪪</a>
   </p>
-
-
-#### By Noah Atkinson
 
 <p align="center">
   <img src="src/img/film-fridge.jpg" alt="film fridge" width="400" />
@@ -21,11 +26,11 @@
 
 
 ## Description
-#### _A web application that tracks inventory of film stock at a film lab._
+#### _A web application that tracks inventory of 🎞️ film stock at a film lab._
 
 ## Technologies Used
 
-* _React_
+* _React_ 
 * _JavaScript_
 * _JSX_
 * _NPM_
@@ -38,7 +43,7 @@
 
 ## Known Bugs
 
-* _None_
+* _None 🏝️_
 
 ## License
 
