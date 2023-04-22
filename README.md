@@ -13,6 +13,8 @@
     <br>
     <a href="#technologies-used">💽 Technologies Used 💾</a>
     <br>
+    <a href="#component-tree">📊 Component Tree 🌲</a>
+    <br>
     <a href="#setup-and-installation-requirements">🧰 Setup and Installation Requirements 🔨</a>
     <br>
     <a href="#known-bugs">🪲🐞 Known Bugs 🐛🐜</a>
@@ -26,14 +28,20 @@
 
 
 ## Description
-#### _A web application that tracks inventory of 🎞️ film stock at a film lab._
+#### _A web application that tracks inventory of the film fridge at a store that still sells it._
 
 ## Technologies Used
 
 * _React_ 
 * _JavaScript_
 * _JSX_
+* _CSS_
 * _NPM_
+
+## Component Tree
+<p align="center">
+  <img src="src/img/FilmFridgeComponentTree.png" alt="Component Tree" width="600" />
+</p>
 
 ## Setup and Installation Requirements
 
