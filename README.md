@@ -43,7 +43,8 @@
 
 ## Known Bugs
 
-* _None 🏝️_
+* _When you edit a film stock's details, you are able to edit them and make changes. But, when you click save it gives an error "props.returnToList is not a function"_
+* _However, the changes are saved if you: X out of the error -> press Cancel -> Back To List_
 
 ## License
 
