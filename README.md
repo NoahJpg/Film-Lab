@@ -46,7 +46,10 @@
 ## Setup and Installation Requirements
 
 
-* _TBD_
+* _Clone this repo._
+* _Open your terminal (e.g., Terminal or GitBash) and navigate to this project's production directory called "film-lab"._
+* _In the terminal run the following command `npm install`._
+* _Then run `npm start` which will open the project._
 
 
 ## Known Bugs
