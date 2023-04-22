@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 function FilmStockList(props) {
   return (
     <React.Fragment>
-      <h2>Film Stocks:</h2>
       <div className="film-list">
         {props.filmList.map(film => 
           <FilmStockEntry

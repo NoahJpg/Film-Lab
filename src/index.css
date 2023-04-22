@@ -22,6 +22,10 @@
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
+  background-image: url('img/film-store.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   }
   
   button {
@@ -72,7 +76,7 @@
   }
   
   header {
-  background-color: var(--button-yellow);
+  background-color: rgb(200, 154, 231);
   width: 100%;
   height: var(--header-height);
   display: flex;
@@ -173,6 +177,7 @@
   }
   
   .film-details-card {
+    background-color: white;
     border: 1px solid rgb(0, 89, 255);
     padding: 1rem;
   }
