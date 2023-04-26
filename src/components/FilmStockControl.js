@@ -109,6 +109,11 @@ class FilmStockControl extends React.Component {
     });
   };
 
+  handleEditConfirm = () => {
+    this.handleCancelAddingNewFilm()
+    this.handleClickBackToList()
+  }
+
   handleEditingFilm = (newFilm) => {
     const newFilmList = [...this.state.filmList];
     const toDeleteFilm = this.getFilmById(newFilm.id, newFilmList);
@@ -144,7 +149,8 @@ class FilmStockControl extends React.Component {
                 bodyComponent={<NewFilmForm 
                   type='create' 
                   onClickAddFilm={this.handleAddingNewFilm} 
-                  onCancelAddFilm={this.handleCancelAddingNewFilm} 
+                  onCancelAddFilm={this.handleCancelAddingNewFilm}
+                  returnToList ={this.handleEditConfirm}
                   />}
               />
 
@@ -157,7 +163,7 @@ class FilmStockControl extends React.Component {
               onClickRestock={this.handleRestockFilm}
               onClickDelete={this.handleDeleteFilm}
               onClickEdit={this.handleEditingFilm}
-              returnToLIst={this.handleClickBackToList}
+              returnToList={this.handleClickBackToList}
             />
           }
         </main>

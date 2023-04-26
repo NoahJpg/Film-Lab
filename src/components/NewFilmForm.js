@@ -1,9 +1,17 @@
 import React from "react";
 import { v4 } from "uuid";
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 function NewFilmForm(props) {
-
+  
+  const [filmName, setFilmName] = useState(props.editingFilm ? props.editingFilm.name : "")
+  const [filmManufacturer, setFilmManufacturer] = useState(props.editingFilm ? props.editingFilm.manufacturer : "")
+  const [filmIso, setFilmIso] = useState(props.editingFilm ? props.editingFilm.iso : "")
+  const [filmSize, setFilmSize] = useState(props.editingFilm ? props.editingFilm.size : "")
+  const [filmPrice, setFilmPrice] = useState(props.editingFilm ? props.editingFilm.price : "")
+  const [filmQuantity, setFilmQuantity] = useState(props.editingFilm ? props.editingFilm.quantity : "")
+  
   function handleNewFilmFormSubmission(e) {
     e.preventDefault();
     props.onClickAddFilm({
@@ -39,13 +47,17 @@ function NewFilmForm(props) {
         <input placeholder={props.editingFilm && props.editingFilm.name} 
         name="name" 
         type="text" 
+        value={filmName}
+        onChange={(event) => setFilmName(event.target.value)}
         />
       </div>
       <div className="form-row">
         <label for="manufacturer">Manufacturer</label>
         <input placeholder={props.editingFilm && props.editingFilm.manufacturer} 
         name="manufacturer" 
-        type="text" 
+        type="text"
+        value={filmManufacturer}
+        onChange={(event) => setFilmManufacturer(event.target.value)} 
         />
       </div>
       <div className="form-row">
@@ -53,6 +65,8 @@ function NewFilmForm(props) {
         <textarea placeholder={props.editingFilm && props.editingFilm.iso} 
         name="iso" 
         type="text"
+        value={filmIso}
+        onChange={(event) => setFilmIso(event.target.value)} 
         />
       </div>
       <div className="form-row">
@@ -60,6 +74,8 @@ function NewFilmForm(props) {
         <textarea placeholder={props.editingFilm && props.editingFilm.size} 
         name="size" 
         type="text"
+        value={filmSize}
+        onChange={(event) => setFilmSize(event.target.value)} 
         />
       </div>
       <div className="form-row">
@@ -67,6 +83,8 @@ function NewFilmForm(props) {
         <input placeholder={props.editingFilm && props.editingFilm.price} 
         name="price" 
         type="number"
+        value={filmPrice}
+        onChange={(event) => setFilmPrice(event.target.value)} 
         />
       </div>
       <div className="form-row">
@@ -74,6 +92,8 @@ function NewFilmForm(props) {
         <input placeholder={props.editingFilm && props.editingFilm.quantity} 
         name="quantity" 
         type="number"
+        value={filmQuantity}
+        onChange={(event) => setFilmQuantity(event.target.value)} 
         />
       </div>
       <div className="form-row buttons">
