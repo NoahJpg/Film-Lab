@@ -9,6 +9,8 @@
   </p>
   
   <p align="center">
+    <a href="https://film-lab.vercel.app/">🏃 Run the App 💻</a>
+    <br />
     <a href="#description">📝 Description 📚</a>
     <br>
     <a href="#technologies-used">💽 Technologies Used 💾</a>
@@ -40,7 +42,7 @@
 
 ## Component Tree
 <p align="center">
-  <img src="src/img/FilmFridgeComponentTree.png" alt="Component Tree" width="600" />
+  <img src="src/img/FilmFridgeComponentTree.png" alt="Component Tree" width="600"/>
 </p>
 
 ## Setup and Installation Requirements
